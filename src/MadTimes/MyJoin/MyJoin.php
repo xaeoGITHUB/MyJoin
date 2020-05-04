@@ -24,7 +24,7 @@ class Main extends PluginBase implements Listener
         $this->getServer()->getLogger()->info($this->prefix . Color::GREEN . 'Made by: github.com/MadTimesNET.');
         $this->getServer()->getCommandMap()->register('myjoin', new MyJoinCommand($this));
         $config = new Config($this->getDataFolder() . 'config.yml', Config::YAML);
-        if (empty)
+        if (empty($config))
         {
             $config->set('messageformat', '§l§b{player}§r§7: §e{message}');
             $config->set('defaultmessage', 'The king is now online!');

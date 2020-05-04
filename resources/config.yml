@@ -1,0 +1,14 @@
+# This plugin is developed by MadTimesNET
+# https://github.com/MadTimesNET
+
+# Messages
+# You can use these strings to modify the plugin:
+# {player} - The player
+# {message} - The message
+
+messageformat: ''
+defaultmessage: ''
+
+cmdNoArgs: ''
+cmdNoPerms: ''
+cmdSuccess: ''

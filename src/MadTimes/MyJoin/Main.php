@@ -47,6 +47,7 @@ class Main extends PluginBase implements Listener
     }
     public function onLogin(PlayerLoginEvent $event)
     {
+        $player = $event->getPlayer();
         $config = new Config($this->getDataFolder() . 'config.yml', Config::YAML);
         $playerfile = new Config($this->getDataFolder() . 'players/' . $player->getName() . '.yml', Config::YAML);
         if (empty($playerfile))

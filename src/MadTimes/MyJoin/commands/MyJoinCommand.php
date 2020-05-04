@@ -20,30 +20,32 @@ class MyJoinCommand extends Command
     }
     public function convert(string $string, $newStatus) : string
     {
-        $string = str_replace("{message}", $newStatus, $string);
+        $string = str_replace("{player}", $sender->getName(), $string);
+        $string = str_replace("{message}", $message, $string);
         return $string;
     }
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         $config = new Config($this->getDataFolder() . 'config.yml', Config::YAML);
-        $playerfile = new Config($this->getDataFolder() . 'players/' . $player->getName() . '.yml', Config::YAML);
+        $playerfile = new Config($this->getDataFolder() . 'players/' . $sender->getName() . '.yml', Config::YAML);
         if ($sender->hasPermission('myjoin.myjoin'))
         {
             if (isset($args[0]))
             {
-                $newStatus = implode(' ', $args);
-                $playerfile->set('status', $newStatus);
+                $message = implode(' ', $args);
+                $playerfile->set('status', $message);
                 $playerfile->save();
-                $sender->sendMessage($this->convert($config->get('cmdSuccess'), $newStatus));
+                $sender->sendMessage($this->convert($config->get('cmdSuccess'), $sender->getName(), $message));
             }
             else
-            {
-                $sender->sendMessage($config->get('cmdNoArgs'));
+            {                
+                $message = implode(' ', $args);
+                $sender->sendMessage($this->convert($config->get('cmdNoArgs'), $sender->getName(), $message));
             }
         }
         else
         {
-            $sender->sendMessage($config->get('cmdNoPerms'));
+            $sender->sendMessage($this->convert($config->get('cmdNoPerms'), $sender->getName(), $message));
         }
     }
 }

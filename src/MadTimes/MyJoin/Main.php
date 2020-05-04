@@ -39,7 +39,7 @@ class Main extends PluginBase implements Listener
         $player = $event->getPlayer();
         $config = new Config($this->getDataFolder() . 'config.yml', Config::YAML);
         $playerfile = new Config($this->getDataFolder() . 'players/' . $player->getName() . '.yml', Config::YAML);
-        if ($sender->hasPermission("myjoin.myjoin"))
+        if ($player->hasPermission("myjoin.myjoin"))
         {
             $message = $playerfile->get('status');
             $this->getServer()->broadcastMessage($this->convert($config->get('messageformat'), $player, $message));

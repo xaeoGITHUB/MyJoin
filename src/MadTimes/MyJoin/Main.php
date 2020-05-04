@@ -57,7 +57,7 @@ class Main extends PluginBase implements Listener
             $playerfile->save();
         }
     }
-    public function convert(string $string, $player, $message) : string
+    public function convert(string $string, $playername, $message) : string
     {
         $string = str_replace("{player}", $playername, $string);
         $string = str_replace("{message}", $message, $string);

@@ -45,7 +45,7 @@ class Main extends PluginBase implements Listener
             $this->getServer()->broadcastMessage($this->convert($config->get('messageformat'), $player, $message));
         }
     }
-    public function onJoin(PlayerLoginEvent $event)
+    public function onLogin(PlayerLoginEvent $event)
     {
         $config = new Config($this->getDataFolder() . 'config.yml', Config::YAML);
         $playerfile = new Config($this->getDataFolder() . 'players/' . $player->getName() . '.yml', Config::YAML);

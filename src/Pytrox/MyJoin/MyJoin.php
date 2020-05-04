@@ -9,6 +9,7 @@ use pocketmine\event\player\PlayerLoginEvent;
 use pocketmine\utils\TextFormat as Color;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
+use pocketmine\utils\Config;
 
 use Pytrox\MyJoin\commands\MyJoinCommand;
 
@@ -27,6 +28,9 @@ class Main extends PluginBase implements Listener
         {
             $config->set('messageformat', '§l§b{player}§r§7: §e{message}');
             $config->set('defaultmessage', 'The king is now online!');
+            $config->set('cmdNoPerms', $this->prefix . Color::RED . 'You do not have permission to execute this command.');
+            $config->set('cmdNoArgs', $this->prefix . Color::RED . 'Usage: /myjoin <message>');
+            $config->set('cmdSuccess', $this->prefix . Color::GREEN . 'You successfully changed your joinstatus to: ' . Color::YELLOW . '{message}');
             $config->save();
         }
     }

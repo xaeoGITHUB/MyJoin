@@ -1,6 +1,6 @@
 <?php
 
-namespace Pytrox\MyJoin;
+namespace MadTimes\MyJoin;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
@@ -11,7 +11,7 @@ use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\utils\Config;
 
-use Pytrox\MyJoin\commands\MyJoinCommand;
+use MadTimes\MyJoin\commands\MyJoinCommand;
 
 class Main extends PluginBase implements Listener
 {

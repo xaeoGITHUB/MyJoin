@@ -42,7 +42,7 @@ class Main extends PluginBase implements Listener
         if ($player->hasPermission("myjoin.myjoin"))
         {
             $message = $playerfile->get('status');
-            $this->getServer()->broadcastMessage($this->convert($config->get('messageformat'), $player, $message));
+            $this->getServer()->broadcastMessage($this->convert($config->get('messageformat'), $player->getName(), $message));
         }
     }
     public function onLogin(PlayerLoginEvent $event)
@@ -58,7 +58,7 @@ class Main extends PluginBase implements Listener
     }
     public function convert(string $string, $player, $message) : string
     {
-        $string = str_replace("{player}", $player, $string);
+        $string = str_replace("{player}", $player->getName(), $string);
         $string = str_replace("{message}", $message, $string);
         return $string;
     }

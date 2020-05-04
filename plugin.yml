@@ -1,0 +1,11 @@
+name: MyJoin
+version: 1.0.0
+api:
+  - 3.0.0
+  - 4.0.0
+author: Pytrox
+main: Pytrox\MyJoin\Main
+permissions:
+  myjoin.myjoin:
+    default: op
+    alias: []

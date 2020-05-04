@@ -4,7 +4,7 @@ api:
   - 3.0.0
   - 4.0.0
 author: Pytrox
-main: MadTimes\MyJoin\MyJoin
+main: MadTimes\MyJoin\Main
 permissions:
   myjoin.myjoin:
     default: op

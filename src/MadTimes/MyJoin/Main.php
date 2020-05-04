@@ -37,12 +37,13 @@ class Main extends PluginBase implements Listener
     public function onJoin(PlayerJoinEvent $event)
     {
         $player = $event->getPlayer();
+        $playername = $player->getName();
         $config = new Config($this->getDataFolder() . 'config.yml', Config::YAML);
         $playerfile = new Config($this->getDataFolder() . 'players/' . $player->getName() . '.yml', Config::YAML);
         if ($player->hasPermission("myjoin.myjoin"))
         {
             $message = $playerfile->get('status');
-            $this->getServer()->broadcastMessage($this->convert($config->get('messageformat'), $player->getName(), $message));
+            $this->getServer()->broadcastMessage($this->convert($config->get('messageformat'), $playername, $message));
         }
     }
     public function onLogin(PlayerLoginEvent $event)
@@ -58,7 +59,7 @@ class Main extends PluginBase implements Listener
     }
     public function convert(string $string, $player, $message) : string
     {
-        $string = str_replace("{player}", $player->getName(), $string);
+        $string = str_replace("{player}", $playername, $string);
         $string = str_replace("{message}", $message, $string);
         return $string;
     }

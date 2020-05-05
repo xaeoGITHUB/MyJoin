@@ -27,8 +27,8 @@ class MyJoinCommand extends Command
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         $sendername = $sender->getName();
-        $config = new Config($this->getDataFolder() . 'config.yml', Config::YAML);
-        $playerfile = new Config($this->getDataFolder() . 'players/' . $sender->getName() . '.yml', Config::YAML);
+        $config = new Config($this->plugin->getDataFolder() . 'config.yml', Config::YAML);
+        $playerfile = new Config($this->plugin->getDataFolder() . 'players/' . $sender->getName() . '.yml', Config::YAML);
         if ($sender->hasPermission('myjoin.myjoin'))
         {
             if (isset($args[0]))

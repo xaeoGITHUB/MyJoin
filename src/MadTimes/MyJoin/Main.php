@@ -23,6 +23,10 @@ class Main extends PluginBase implements Listener
         $this->getServer()->getLogger()->info($this->prefix . Color::GREEN . 'Plugin was loaded.');
         $this->getServer()->getLogger()->info($this->prefix . Color::GREEN . 'Made by: github.com/MadTimesNET.');
         $this->getServer()->getCommandMap()->register('myjoin', new MyJoinCommand($this));
+        if (!$this->getDataFolder())
+        {
+            @mkdir($this->getDataFolder().'players');
+        }
         $config = new Config($this->getDataFolder() . 'config.yml', Config::YAML);
         if (empty($config->get('messageformat')))
         {

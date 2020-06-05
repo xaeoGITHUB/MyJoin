@@ -1,6 +1,6 @@
 # MyJoin
 
-* A plugin to make an join message.
+* Give your players a customized joinmessage. Each player can make their own.
 
 # Config
 * You can customize the message, which is displayed on join.

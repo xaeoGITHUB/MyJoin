@@ -32,9 +32,9 @@ class Main extends PluginBase implements Listener
         {
             $config->set('messageformat', '§l§b{player}§r§7: §e{message}');
             $config->set('defaultmessage', 'The king is now online!');
-            $config->set('cmdNoPerms', $this->prefix . Color::RED . 'You do not have permission to execute this command.');
+            $config->set('cmdNoPerms', $this->prefix . Color::RED . 'You do not have enough permissions to execute this command.');
             $config->set('cmdNoArgs', $this->prefix . Color::RED . 'Usage: /myjoin <message>');
-            $config->set('cmdSuccess', $this->prefix . Color::GREEN . 'You successfully changed your joinstatus to: ' . Color::YELLOW . '{message}');
+            $config->set('cmdSuccess', $this->prefix . Color::GREEN . 'You successfully changed your MyJoin-Status to: ' . Color::YELLOW . '{message}');
             $config->save();
         }
     }

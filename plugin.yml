@@ -3,10 +3,10 @@ version: 1.0.0
 api:
   - 3.0.0
   - 4.0.0
-author: Pytrox
-main: MadTimes\MyJoin\Main
+author: Xaeo
+main: Xaeo\MyJoin\Main
 permissions:
   myjoin.myjoin:
     default: op
-    description: "Permission to get the join message"
+    description: "Perms"
     alias: []
